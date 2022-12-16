@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>List products</title>
+  </head>
+  <body>
+    <div class="main-list">
+  <div class="projets" id="projets">
+    <section>
+        
+        <div class="container_btn"><a class="bouton-contact"href="/firstapp/create">Create</a></div>
+          
+      
+    </section>
+    <article>
+        {% for data in dataset %}
+      <a  href="/firstapp/{{ data.id }}">
+        <div class="cards">
+          <img src="{{ data.img_url }}" alt="" />
+          <section>
+            <h3>{{ data.name }}</h3>
+            <p>stock: {{ data.quantity }}</p>
+            <p>{{ data.price }} €</p>
+          </section>
+        </div>
+      </a>
+      {% endfor %}
+    </article>
+  </div>
+  </body>
+
+
+
+  
+
+  
+
+
+  
+</div>
